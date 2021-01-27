@@ -1,0 +1,32 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  color: #fff;
+  max-width: 768px;
+  margin: 30px auto;
+
+  border-radius: 10px;
+  border: 1px solid #fff;
+}
+.score {
+  background: #fff;
+  color: hsl(229, 64%, 46%);
+  width: 120px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 5px;
+  box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.9);
+}
+.score span {
+  font-size: 2.5rem;
+  color: hsl(229, 25%, 31%);
+}
+@media (max-width: 800px) {
+  .header {
+    margin: 30px 20px;
+  }
+}

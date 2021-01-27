@@ -1,23 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+
+import './App.css'
+import { Duelo } from './components/Duelo/Duelo'
+import { Header } from './components/Header/Header'
+import { Original } from './components/Original/Original'
+import { Roule } from './components/Roule/Roule'
+
+
 
 function App() {
+
+  const [mao, setMao] = React.useState(undefined);
+  const [score, setScore] = React.useState(0);
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header score={score}/>
+      {
+      mao!==''&&mao!==undefined? 
+      <Duelo setMao={setMao} mao={mao}
+      />  
+      :
+      <Original setMao={setMao} 
+      />
+      }
+      <Roule/>
     </div>
   );
 }
