@@ -3,28 +3,44 @@ import Triangle from '../../images/bg-triangle.svg';
 import Paper from '../../images/icon-paper.svg';
 import Rock from '../../images/icon-rock.svg';
 import Scissors from '../../images/icon-scissors.svg';
+import styled from 'styled-components';
+import { Mao } from '../Mao';
 
-import './Original.css';
+const JogoOriginal = styled.div`
+  max-width: 800px;
+  max-height: 500px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  margin: 40px auto;
+  position: relative;
+  > img {
+    position: absolute;
+    align-self: center;
+    justify-self: center;
+    max-width: 350px;
+  }
+`;
 
 export const Original = ({ setMao }) => {
   return (
-    <div className="original">
+    <JogoOriginal>
       <img src={Triangle} alt="Triangle" />
-      <div className="mao paper">
-        <button onClick={() => setMao(Paper)}>
+      <Mao mao="paper">
+        <button onClick={() => setMao('paper')}>
           <img src={Paper} alt="Paper" />
         </button>
-      </div>
-      <div className="mao rock">
-        <button onClick={() => setMao(Rock)}>
+      </Mao>
+      <Mao mao="rock">
+        <button onClick={() => setMao('rock')}>
           <img src={Rock} alt="Rock" />
         </button>
-      </div>
-      <div className="mao scissors">
-        <button onClick={() => setMao(Scissors)}>
+      </Mao>
+      <Mao mao="scissors">
+        <button onClick={() => setMao('scissors')}>
           <img src={Scissors} alt="Scissors" />
         </button>
-      </div>
-    </div>
+      </Mao>
+    </JogoOriginal>
   );
 };

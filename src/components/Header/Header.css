@@ -30,3 +30,11 @@
     margin: 30px 20px;
   }
 }
+@media (max-width: 400px) {
+  .score {
+    width: 70px;
+  }
+  .modo h1 {
+    font-size: 1.3rem;
+  }
+}
