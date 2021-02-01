@@ -7,8 +7,8 @@ import styled from 'styled-components';
 import { Mao } from '../Mao';
 
 const JogoOriginal = styled.div`
-  max-width: 800px;
-  max-height: 500px;
+  max-width: 700px;
+  height: 350px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 50px;
@@ -18,7 +18,8 @@ const JogoOriginal = styled.div`
     position: absolute;
     align-self: center;
     justify-self: center;
-    max-width: 350px;
+    max-width: 400px;
+    margin-top: 50px;
   }
 `;
 

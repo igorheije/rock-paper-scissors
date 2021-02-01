@@ -37,4 +37,8 @@ export const Mao = styled.div`
           `;
       }};
     }
+    button > img{
+      width: 50px;
+      height: 50px;
+    }
   `;

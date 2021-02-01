@@ -1,30 +1,23 @@
-import React from 'react';
+import React  from 'react';
 
 import './App.css'
-import { Duelo } from './components/Duelo/Duelo'
-import { Header } from './components/Header/Header'
-import { Original } from './components/Original/Original'
-// import { Roule } from './components/Roule/Roule'
+import Main from './components/Main';
 
+import { Header } from './components/Header/Header';
+import { Roule } from './components/Roule';
+import ScoreProvider, {useScore, ScoreContext} from './context/Score'
 
 
 function App() {
-
-  const [mao, setMao] = React.useState('');
-  const [score, setScore] = React.useState(0);
-console.log(score);
+  // const {score} = React.useContext(ScoreContext)
+  const context = useScore()
+console.log(context);
   return (
-    <div className="App">
-      <Header score={score}/>
-      {
-      mao!==''&&mao!==undefined? 
-      <Duelo setMao={setMao} mao={mao} setScore={setScore} score={score}
-      />  
-      :
-      <Original setMao={setMao} 
-      />
-      }
-    </div>
+      <ScoreProvider>
+        <Header />
+        <Main/>
+        <Roule>Roule</Roule>
+      </ScoreProvider>
   );
 }
 
