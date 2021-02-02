@@ -4,8 +4,8 @@
   padding: 20px;
   color: #fff;
   max-width: 768px;
+  width: 100%;
   margin: 30px auto;
-
   border-radius: 10px;
   border: 1px solid #fff;
 }
@@ -30,10 +30,11 @@
     margin: 30px 20px;
   }
 }
-@media (max-width: 400px) {
-  .score {
-    width: 70px;
+@media (max-width: 550px) {
+  .header {
+    margin: 20px 0px 0px 0px;
   }
+
   .modo h1 {
     font-size: 1.3rem;
   }

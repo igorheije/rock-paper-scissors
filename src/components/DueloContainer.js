@@ -6,6 +6,7 @@ export const DueloContainer = styled.div`
     padding: 20px;
     color: #fff;
     width: 100%;
+    height: 450px;
 
     @media (max-width: 800px) {
       grid-template-columns: 1fr 1fr;

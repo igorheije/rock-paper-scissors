@@ -1,14 +1,18 @@
 import React from 'react';
+import { useScore } from '../../context/Score';
+import { useType } from '../../context/Type';
 
 import './Header.css';
 
-export const Header = ({ score }) => {
+export const Header = () => {
+  const { score } = useScore();
+  const { type } = useType();
+  const { logo } = type;
+
   return (
     <div className="header">
       <div className="modo">
-        <h1>Rock</h1>
-        <h1>Paper</h1>
-        <h1>Scissors</h1>
+        <img src={logo} alt="LogoC" />
       </div>
       <div className="score">
         <h5>SCORE</h5>

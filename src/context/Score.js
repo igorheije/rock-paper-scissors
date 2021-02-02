@@ -1,9 +1,9 @@
 import React, {createContext, useState, useContext } from 'react';
 
 
-const ScoreContext = createContext();
+export const ScoreContext = createContext();
 
-export default function ScoreProvider({ children }) {
+export const ScoreProvider = ({ children })=> {
   const [score, setScore] = useState(0);
 
   return (
@@ -20,8 +20,8 @@ export default function ScoreProvider({ children }) {
 export function useScore() {
   const context = useContext(ScoreContext);
   if (!context) throw new Error("useCount must be used within a CountProvider");
-  const { count, setCount } = context;
-  return { count, setCount };
+  const { score, setScore } = context;
+  return { score, setScore };
 }
 
 

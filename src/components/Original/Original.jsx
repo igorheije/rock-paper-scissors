@@ -1,17 +1,15 @@
 import React from 'react';
-import Triangle from '../../images/bg-triangle.svg';
-import Paper from '../../images/icon-paper.svg';
-import Rock from '../../images/icon-rock.svg';
-import Scissors from '../../images/icon-scissors.svg';
 import styled from 'styled-components';
+import { useType } from '../../context/Type';
 import { Mao } from '../Mao';
 
 const JogoOriginal = styled.div`
   max-width: 700px;
+  width: 100%;
   height: 350px;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 50px;
+
   margin: 40px auto;
   position: relative;
   > img {
@@ -19,11 +17,18 @@ const JogoOriginal = styled.div`
     align-self: center;
     justify-self: center;
     max-width: 400px;
-    margin-top: 50px;
+    margin-top: 30px;
+  }
+  div:nth-child(4) {
+    grid-column: span 2;
   }
 `;
 
 export const Original = ({ setMao }) => {
+  const { type } = useType();
+  const Triangle = type.fundo;
+  const { Paper, Rock, Scissors } = type.maosSvg;
+
   return (
     <JogoOriginal>
       <img src={Triangle} alt="Triangle" />

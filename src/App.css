@@ -11,5 +11,14 @@ body {
 .App {
   display: flex;
   flex-direction: column;
+  margin: auto;
+  padding: 5px;
+}
+.btns {
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+  margin-bottom: 10px;
   width: 100%;
+  max-width: 800px;
 }

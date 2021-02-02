@@ -1,11 +1,12 @@
 import styled from 'styled-components'
 
-export const Roule = styled.button`
+export const ButtonRoule = styled.button`
 
   padding: 10px 20px;
   color: #fff;
   width: 150px;
-
+  justify-self: center;
+  
   border-radius: 10px;
   border: 1px solid #fff;
   background-color: transparent;

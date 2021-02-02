@@ -6,22 +6,24 @@ export const Mao = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    overflow: hidden;
-    :nth-of-type(3) {
-      grid-column: span 2;
-    }
+    overflow: visible;
+    
     img {
       width: 100%;
     }
     
     button {
       order:0;
-      max-width: 250px;
+      width:100%;
+      height:100%;
+      width: 140px;
+      height: 140px;
       padding: 20px;
       border-radius: 50%;
       z-index: 2;
       outline: none;
       cursor: pointer;
+      overflow: visible;
       ${({ mao }) => {
         if (mao === 'paper')
           return css`
@@ -34,6 +36,14 @@ export const Mao = styled.div`
         if (mao === 'scissors')
           return css`
             border: 1em  solid hsl(349, 71%, 52%);
+          `;
+        if (mao === 'lizard')
+          return css`
+            border: 1em  solid  hsl(261, 72%, 63%);
+          `;
+        if (mao === 'spock')
+          return css`
+            border: 1em  solid hsl(189, 58%, 57%);
           `;
       }};
     }

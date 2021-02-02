@@ -1,20 +1,35 @@
 import React, { useContext } from 'react';
-import { ThemeContext, ThemeProvider } from '../context/Theme';
+import { TypeContext } from '../context/Type';
 import { Duelo } from './Duelo/Duelo';
 import { Original } from './Original/Original';
+import { Bonus } from './Bonus/Bonus';
+import Roules from './Roules';
+import { ButtonRoule } from './ButtonRoule';
 
-const Main = () => {
+const Main = ({ setGame }) => {
   const [mao, setMao] = React.useState('');
-  const context = useContext(ThemeContext);
-  console.log(context);
+  const [ruleToggle, setRuleToggle] = React.useState(true);
+  const { type } = useContext(TypeContext);
+
+  if (mao !== '' && mao !== undefined)
+    return <Duelo setMao={setMao} mao={mao} />;
+
   return (
-    <ThemeProvider>
-      {mao !== '' && mao !== undefined ? (
-        <Duelo setMao={setMao} mao={mao} />
-      ) : (
+    <>
+      {type.name === 'classico' ? (
         <Original setMao={setMao} />
+      ) : (
+        <Bonus setMao={setMao} />
       )}
-    </ThemeProvider>
+
+      {ruleToggle && <Roules setRuleToggle={setRuleToggle} />}
+      {!mao && (
+        <div className="btns">
+          <ButtonRoule onClick={() => setGame(false)}>Modes</ButtonRoule>
+          <ButtonRoule onClick={() => setRuleToggle(true)}>Rules</ButtonRoule>
+        </div>
+      )}
+    </>
   );
 };
 
