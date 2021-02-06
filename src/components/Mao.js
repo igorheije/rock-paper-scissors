@@ -6,16 +6,11 @@ export const Mao = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    overflow: visible;
-    
     img {
       width: 100%;
     }
     
     button {
-      order:0;
-      width:100%;
-      height:100%;
       width: 140px;
       height: 140px;
       padding: 20px;
@@ -23,7 +18,6 @@ export const Mao = styled.div`
       z-index: 2;
       outline: none;
       cursor: pointer;
-      overflow: visible;
       ${({ mao }) => {
         if (mao === 'paper')
           return css`

@@ -9,6 +9,7 @@ const JogoBonus = styled.div`
   height: 400px;
   display: grid;
   grid-template-columns: 1fr 1fr;
+  gap: 10px;
   margin: 20px auto;
   position: relative;
   > img {
@@ -27,6 +28,8 @@ const JogoBonus = styled.div`
     justify-content: flex-start;
   }
   @media (max-width: 500px) {
+    gap: 0px;
+
     > div:nth-child(3) {
       justify-content: flex-start;
     }

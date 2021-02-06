@@ -1,13 +1,17 @@
 .header {
   display: flex;
   justify-content: space-between;
-  padding: 20px;
+  padding: 15px;
   color: #fff;
   max-width: 768px;
   width: 100%;
-  margin: 30px auto;
+  margin: 10px auto;
   border-radius: 10px;
   border: 1px solid #fff;
+}
+.modo {
+  display: flex;
+  align-items: center;
 }
 .score {
   background: #fff;
@@ -25,17 +29,12 @@
   font-size: 2.5rem;
   color: hsl(229, 25%, 31%);
 }
-@media (max-width: 800px) {
-  .header {
-    margin: 30px 20px;
-  }
-}
+
 @media (max-width: 550px) {
   .header {
-    margin: 20px 0px 0px 0px;
+    margin: 10px 0px 0px 0px;
   }
-
-  .modo h1 {
-    font-size: 1.3rem;
+  .modo img {
+    width: 100%;
   }
 }

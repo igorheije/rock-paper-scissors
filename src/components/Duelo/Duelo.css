@@ -1,5 +1,7 @@
 .oponente,
 .jogador {
+  display: flex;
+  flex-direction: column;
   align-self: center;
   justify-self: center;
   text-align: center;
@@ -37,5 +39,9 @@
   .play {
     order: 2;
     grid-column: span 2;
+  }
+  h3:first-child {
+    margin: 10px 0;
+    order: 2;
   }
 }
